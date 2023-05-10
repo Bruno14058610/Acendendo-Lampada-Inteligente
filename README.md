@@ -10,8 +10,8 @@ Utilizando Controlador para acender ou desligar a luz de um ambiente com interru
 * [Metodologia ](#Metodologia)
 * [Link do video-demonstração ](#Link-do-video-demonstração)
 * [Link do documento final ](#Link-do-documento-final)
-* [Concluões](#Conclusões)
-* [ Refeências ](#Referências)
+* [Conclusões](#Conclusões)
+* [ Referências ](#Referências)
 
 # Desenvolvedor 
 Bruno Sousa Silva (brunosilva1405@hotmail.com)
