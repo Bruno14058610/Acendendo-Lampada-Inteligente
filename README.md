@@ -73,7 +73,7 @@ Para desenvolmento do projeto, foram adquiridos:
 
 12. Cabo flexível: Foi adquirido 8m de cabo flexível com as seguintes especificações: 750V de tensão, 2,5mm² de seção nominal, cor branco e 0,8mm de espessura.
 
-![Cabo flexível](https://github.com/Bruno14058610/Acendendo-Lampada-Inteligente/assets/78832216/b1052da8-0482-44c2-8f7d-89aeddc79ba1)
+![Cabo Flexivel](https://github.com/Bruno14058610/Acendendo-Lampada-Inteligente/assets/78832216/a0f0e759-4f34-4af8-a277-91ffac4e09fb)
 
 13. Soquete bocal de lâmpada - Pendente: Foi adquirido um soquete bocal estilo pendente bivolt na cor preta.
 
@@ -100,6 +100,7 @@ Módulo Relé conectado ao Protoboard e Controlador, sendo que a entrada “VCC�
 
 Módulo Wifi conectado ao controlador, sendo que a entrada “GND” do módulo wifi foi ligada ao “GND” do controlador, a entrada “GPIO2” do módulo wifi foi ligada a entrada “A5” do controlador, a entrada “GPIO0” do módulo wifi foi conectado a entrada do “A4” do controlador, e as entradas “VCC” e “CH_PD” do módulo wifi foi conectado a entrada 3.3V do controlador.
 ![imagem5](https://github.com/Bruno14058610/Acendendo-Lampada-Inteligente/assets/78832216/e237fa69-4089-4fbd-8a6a-f8a5ba104ff5)
+
 
 
 
