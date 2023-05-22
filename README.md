@@ -101,6 +101,114 @@ Módulo Relé conectado ao Protoboard e Controlador, sendo que a entrada “VCC�
 Módulo Wifi conectado ao controlador, sendo que a entrada “GND” do módulo wifi foi ligada ao “GND” do controlador, a entrada “GPIO2” do módulo wifi foi ligada a entrada “A5” do controlador, a entrada “GPIO0” do módulo wifi foi conectado a entrada do “A4” do controlador, e as entradas “VCC” e “CH_PD” do módulo wifi foi conectado a entrada 3.3V do controlador.
 ![imagem5](https://github.com/Bruno14058610/Acendendo-Lampada-Inteligente/assets/78832216/e237fa69-4089-4fbd-8a6a-f8a5ba104ff5)
 
+Na prática, o esquema eletrônico foi montado conforme a figura abaixo:
+![Esquema Eletronico](https://github.com/Bruno14058610/Acendendo-Lampada-Inteligente/assets/78832216/ecc9555d-aec7-473c-ae33-4ca535c03e61)
+
+### Etapa 2 - Controlador e notebook: 
+Em seguida, o controlador foi conectado ao computador por meio do cabo USB, e por meio deste foi configurado para o objetivo deste projeto. Além da configuração, o computador fornece energia elétrica ao controlador
+![Controlador e Notebook](https://github.com/Bruno14058610/Acendendo-Lampada-Inteligente/assets/78832216/f4ab2e86-0c56-4867-abce-159cafd4347a)
+
+### Etapa 3 - Módulo Relé e Lâmpada
+
+O cabo flexível foi instalado no módulo de relé e nos plugues macho/fêmea, sendo que o plugue macho foi inserido na tomada 110V da casa.
+![Módulo Relé e Lâmpada](https://github.com/Bruno14058610/Acendendo-Lampada-Inteligente/assets/78832216/356bde19-49ea-4401-8e30-3d9caa6aab25)
+
+### Etapa 4 - Lâmpada e Soquete bocal:
+
+O cabo flexível foi instalado no bocal da lâmpada:
+![Lampada e Soquete](https://github.com/Bruno14058610/Acendendo-Lampada-Inteligente/assets/78832216/c2c6bfc5-b861-4f2e-91a0-f3b86817c5b4)
+
+#### Configurando o Controlador:
+
+Criando o interruptor digital na Internet: No site/app da adafruit (ADAFRUIT, 2022), que utiliza o protocolo MQTT, foi desenvolvido o interruptor digital com os botões de ON (1) e OFF (9). Foi inserido a biblioteca da adafruit na biblioteca da IDE do Arduino que será utilizada para configurar o controlador, o Módulo de Wifi, o Módulo Relé e o interruptor digital.
+
+![DisplayLed](https://github.com/Bruno14058610/Acendendo-Lampada-Inteligente/assets/78832216/66dfa934-6a9b-4d72-9b3e-3ee2d4c190fe)
+
+#### Configurando o Módulo Wifi pela IDE (parte 1):
+
+Para configurar o Módulo Wifi ESP8266 ESP-01 deverá ser utilizado um Adaptador USB para Módulo WiFi ESP8266 ESP-01 e a biblioteca A2 (BRINCANDO DOM IDEIAS, 2022). Após acoplar o ESP8266 ao adaptador, o mesmo deverá ser inserido na porta USB do computador em forma de gravação. Para compilar o Sketch Master e Config.h no próprio ESP8266 ESP-01 deve ser selecionado “Ferramentas”  Placa  ESP8266  Generic ESP8266 Modulo, e “Ferramentas”  Porta  COM X, onde X é um número da porta definida pelo computador .
+
+#### Configurando o  Módulo Wifi (parte 2) e o modulo Sensor de Som pela IDE:
+
+Para configurar o controlador para que faça com que receba e envie comandos do Módulo Wifi ESP8266 ESP-01 e do Módulo Sensor de Som ao módulo relé, obrigatório ser acoplados os Módulos ao controlador, por meio dos jumpers, e o controlador ao notebook por meio da porta USB. Para a compilação do código deverá ser utilizado o Sketch Slave.ino, que possui a biblioteca “A2” (BRINCANDO DOM IDEIAS, 2022) e a codificação de comandos, e para ser compilado no controlador deverá ser selecionado “Ferramentas”  Arduino AVR Boards  Arduino UNO e “Ferramentas”  Porta  COM X, onde X é um número de porta definido pelo computador.
+
+
+# Resultados
+
+Projeto em Funcionamento:
+
+Acendendo a lâmpada:
+
+Com as luzes apagadas, ao bater uma palma, ou acionar o interruptor digital no modo ON (1), o módulo sensor de algum eo módulo de wi-fi repassa para o controlador a informação que, por sua vez, verifica a informação, analisa a codificação , e repassa o comando para o módulo relé, que funciona como um interruptor, o qual acende a luz.
+
+![Acendendo a Lampada](https://github.com/Bruno14058610/Acendendo-Lampada-Inteligente/assets/78832216/60289e07-1c7c-4587-ba79-2eb81e214c1e)
+
+![Acendendo Lampada](https://github.com/Bruno14058610/Acendendo-Lampada-Inteligente/assets/78832216/07c9ecb0-32cd-4c93-9871-255fbcd2ecb1)
+
+Apagando a lâmpada:
+
+Caso haja uma segunda palma, em certo intervalo de tempo, ou acionamento do interruptor digital no modo OFF (9), o módulo sensor de algum e o módulo de wi-fi repassam a informação para o controlador, o qual verifica a informação, analisa a codificação e repassa o comando para o módulo relé, o qual apaga a luz.
+
+![Apagando a Lampada](https://github.com/Bruno14058610/Acendendo-Lampada-Inteligente/assets/78832216/2c39f27d-3280-459c-b2da-c9e895611c0f)
+
+![Apagando Lampada](https://github.com/Bruno14058610/Acendendo-Lampada-Inteligente/assets/78832216/3c4a6ca9-5cc0-4c8a-8df0-8d462f24ef3d)
+
+# Link para o vídeo - demonstração
+https://www.youtube.com/watch?v=UnlatBWA4Ds&t=9s
+
+# Link para o document final
+
+[Projeto Acendendo Lampada  Inteligente_A4_final.pdf](https://github.com/Bruno14058610/Acendendo-Lampada-Inteligente/files/11531587/Projeto.Acendendo.Lampada.Inteligente_A4_final.pdf)
+
+# Concluões 
+
+Para as conclusões do projeto foram consideradas as seguintes questões e as respectivas respostas:
+
+• Os objetivos propostos foram alcançados? Sim, tanto com a utilização da Palma quanto com o interruptor digital é possível ligar e apagar a luz.
+
+• Quais são os principais problemas enfrentados e como foram resolvidos? Um dos principais problemas enfrentados foi realizar a conexão entre ESP01, Arduino e Adafruit, e depois foi conciliar o módulo sensor de som ao interruptor para compilação do código no Arduino. Outra dificuldade foi ajustar a sensibilidade do módulo sensor de som. A forma para resolver foi procurar por informações na internet de projetos que sugeriam ideias de como resolver o problema e dificuldades encontrado.
+
+• Quais são as vantagens e desvantagens do projeto? A vantagem é que não há a necessidade de você chegar até um interruptor físico para acender  as luzes (podendo beneficiar inclusive pessoas com limite de mobilidade), por meio de um simples acesso na internet (interruptor digital) ou com o bater de palmas a luzes se acendem. Rápido e prático. A principal vantagem, e o principal intuito desse projeto, é a segurança e a facilidade. A desvantagem seria caso o local esteja sem energia elétrica o sistema não iria funcionar. Outra desvantagem seria caso o local esteja sem internet o interruptor digital não iria acionar. Outra desvantagem seria para o sensor de som, que possui uma distância limite para ser acionado.
+
+• O que deveria/poderia ser feito para melhorar o projeto? Em relação à fonte de energia do Arduino, poderia ser inserida uma bateria para que não houvesse a necessidade de ficar utilizando computador como fonte de energia. Outra melhoria seria melhorar a sensibilidade de som do modulo de som, por exemplo, 1 palma acende a luz, duas palmas apagam.
+
+# Referencias
+
+ADAFRUIT, 2023. Disponível em: < https://www.adafruit.com/ >. Acessado em: 20 de abril de 2023.
+
+BRINCANDO COM IDEIAS, 2023. Disponível em: < https://www.youtube.com/c/brincandocomideias >. Acessado em: 24 de abril de 2023.
+
+EMBARCADOS, 2023. Arduino. Disponível em: <
+http://www.embarcados.com.br/arduino-primeiros-passos >. Acessado em: 9 de fevereiro de 2023.
+
+BRINCANDO COM IDEIAS, 2023. Disponível em: < https://www.youtube.com/c/brincandocomideias >. Acessado em: 11 de fevereiro de 2023.
+
+LEITE, J.R. E.; MARTINS, P. S.; URSINI, E. L. A Internet das Coisas (IoT):Tecnologias e Aplicações. Brazilian Technology Symposium, 2017.
+
+ATZORI, L.; IERA, A.; MORABITO, G. The Internet of Thinags: A survey. Computer Networks, v. 54, n. 15, p. 2787–2805, 2010.
+
+TURING, Dermot. A História da Computação: Do Ábaco à Inteligência Artificial. São Paulo: M.Books do Brazil Editora Ltda, 2019.
+
+ELETROGATE, 2023. Arduino UNO R3. Disponível em: < https://www.eletrogate.com/uno-r3-cabo-usb-para-arduino >. Acessado em: 13 de março de 2023.
+
+ELETROGATE, 2023. Modulo Sensor de SOM KY. Disponível em: < https://www.eletrogate.com/modulo-sensor-de-som-ky-037 >. Acessado em: 13 de março de 2023.
+
+ELETROGATE, 2023. Cabo USB 2.0 – A/B. Disponível em: < https://www.eletrogate.com/cabo-usb-20-a-b-50cm >. Acessado em: 13 de março de 2023.
+
+ELETROGATE, 2023. Adaptador USB para Módulo WiFi ESP8266 ESP-01. Disponível em: < https://www.eletrogate.com/adaptador-usb-para-modulo-wifi-esp8266-esp-01 >. Acessado em: 13 de março de 2023.
+
+ELETROGATE, 2023. Modulo Relé. Disponível em: < https://www.eletrogate.com/modulo-rele-2-canais-5v >. Acessado em: 13 de março de 2023.
+
+ELETROGATE, 2023. Protoboard 830 pontos. < https://www.eletrogate.com/protoboard-830-pontos >. Acessado em: 13 de março de 2023.
+
+ELETROGATE, 2023. Jumpers - Macho/Femea. < https://www.eletrogate.com/jumpers-macho-femea-40-unidades-de-10-cm >. Acessado em: 13 de março de 2023.
+
+ELETROGATE, 2023. Jumpers – Macho/Macho. < https://www.eletrogate.com/jumpers-macho-macho-40-unidades-de-10-cm >. Acessado em: 13 de março de 2023.
+
+ELETROGATE, 2023. Módulo Wifi. Disponível em: < https://www.eletrogate.com/modulo-wifi-serial-esp8266-esp-01 >. Acessado em: 13 de março de 2023.
+
+
+
 
 
 
