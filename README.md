@@ -128,10 +128,21 @@ Criando o interruptor digital na Internet: No site/app da adafruit (ADAFRUIT, 20
 
 Para configurar o Módulo Wifi ESP8266 ESP-01 deverá ser utilizado um Adaptador USB para Módulo WiFi ESP8266 ESP-01 e a biblioteca A2 (BRINCANDO DOM IDEIAS, 2022). Após acoplar o ESP8266 ao adaptador, o mesmo deverá ser inserido na porta USB do computador em forma de gravação. Para compilar o Sketch Master e Config.h no próprio ESP8266 ESP-01 deve ser selecionado “Ferramentas”  Placa  ESP8266  Generic ESP8266 Modulo, e “Ferramentas”  Porta  COM X, onde X é um número da porta definida pelo computador .
 
+Codificação utilizada no Sketch Master:
+[Sketch.Master.txt](https://github.com/Bruno14058610/Acendendo-Lampada-Inteligente/files/11531994/Sketch.Master.txt)
+
+Codificação utilizada no Sketch config.h:
+[Config.h.txt](https://github.com/Bruno14058610/Acendendo-Lampada-Inteligente/files/11532011/Config.h.txt)
+
+Biblioteca A2 (Brincando com Ideias, 2023):
+[A2a-master.zip](https://github.com/Bruno14058610/Acendendo-Lampada-Inteligente/files/11532021/A2a-master.zip)
+
 #### Configurando o  Módulo Wifi (parte 2) e o modulo Sensor de Som pela IDE:
 
 Para configurar o controlador para que faça com que receba e envie comandos do Módulo Wifi ESP8266 ESP-01 e do Módulo Sensor de Som ao módulo relé, obrigatório ser acoplados os Módulos ao controlador, por meio dos jumpers, e o controlador ao notebook por meio da porta USB. Para a compilação do código deverá ser utilizado o Sketch Slave.ino, que possui a biblioteca “A2” (BRINCANDO DOM IDEIAS, 2022) e a codificação de comandos, e para ser compilado no controlador deverá ser selecionado “Ferramentas”  Arduino AVR Boards  Arduino UNO e “Ferramentas”  Porta  COM X, onde X é um número de porta definido pelo computador.
 
+Codificação utilizada no Sketch Slave:
+[Sketch.Slave.txt](https://github.com/Bruno14058610/Acendendo-Lampada-Inteligente/files/11532050/Sketch.Slave.txt)
 
 # Resultados
 
